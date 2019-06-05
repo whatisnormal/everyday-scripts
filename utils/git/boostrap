@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+#
+# Usage:
+#
+
+# Initializes local repo in current directory.
+git init .
+
+# Syncs local branch to remote repo"
+remote_url=${1}
+git remote add origin ${remote_url}
+
+# Verifies remote is set
+git remote -v

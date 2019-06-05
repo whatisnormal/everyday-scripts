@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+#*
+# Sets 'git alias' depending on the argument, replacing any existing value.
+#*
+function set() {
+    prefix="git config --global --replace-all alias."
+    eval "${prefix}${1} \"${2}\""
+    eval "git config --global --get alias.${1}"
+}
+
+set "gpfl" "push --force-with-lease"
+
+
+
