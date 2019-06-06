@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+if [[ -z ${1} ]]; then
+    echo "No repository_name was found. Skipping..."
+    exit 1
+fi
+
+repo_name=${1}
+description=${2}
+
+ssh-keygen -t rsa -f ~/.ssh/${repo_name} -C "${description: ${repo_name}}"
+
+
+echo "********** Copy+paste output to GitHub deploy key ********** "
+cat ~/.ssh/${repo_name}.pub
+
+
+echo "
+
+###### GitHub repository reference
+
+Host github-${repo_name}
+HostName github.com
+User git
+IdentityFile ~/.ssh/${repo_name}
+" >> ~/.ssh/config

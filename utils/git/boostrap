@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 #
-# Usage:
+# Pre-requirements:
+# 1) Create remote repository.
 #
 
 # Initializes local repo in current directory.
@@ -15,3 +16,9 @@ git remote add origin ${remote_url}
 
 # Verifies remote is set
 git remote -v
+
+# Fetches references already created in the remote repo
+git fetch
+
+# Sets upstream to master branch located at the remote repo 'origin', defined previously.
+git branch -u origin/master
