@@ -9,6 +9,8 @@ git init .
 
 # Syncs local branch to remote repo"
 remote_url=${1}
+
+# Adds a remote named 'origin' to the repo 'remote_urlq'
 git remote add origin ${remote_url}
 
 # Verifies remote is set
