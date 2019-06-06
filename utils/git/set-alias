@@ -6,10 +6,14 @@
 function set() {
     prefix="git config --global --replace-all alias."
     eval "${prefix}${1} \"${2}\""
+    echo "****** Validate alias set for '${1}' ***** "
     eval "git config --global --get alias.${1}"
 }
 
 set "gpfl" "push --force-with-lease"
+set "gpr" "pull --rebase"
 
+# Adds to stage modified or deleted file, changes previous commit message and commits.
+set "gca" "commit -a --amend"
 
 
