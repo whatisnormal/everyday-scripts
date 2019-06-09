@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+
+alias ls='ls -lart'
+
+alias cd='cd && ls'
+
+alias cp='cp -v'
+
+# Lazy ancestor directory ziggurat of doom
+alias        ..='cd ..'
+alias       ...='cd ../..'
+alias      ....='cd ../../..'
+alias     .....='cd ../../../..'
+alias    ......='cd ../../../../..'
+alias   .......='cd ../../../../../..'
+alias  ........='cd ../../../../../../..'
+alias .........='cd ../../../../../../../..'
+

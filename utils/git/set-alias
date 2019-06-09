@@ -11,9 +11,17 @@ function set() {
 }
 
 set "gpfl" "push --force-with-lease"
+
 set "gpr" "pull --rebase"
 
 # Adds to stage modified or deleted file, changes previous commit message and commits.
 set "gca" "commit -a --amend"
+
+
+set "gb" "branch"
+
+set "gbr" "branch -r"
+
+set "gs" "status"
 
 
