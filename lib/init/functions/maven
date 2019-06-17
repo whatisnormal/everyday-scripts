@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+function mvn-install-changed() {
+    set -e
+    local MODULES=($(
+        git status --short \
+        | grep -E 'pom\.xml|\w+\.java' \
+        | sed 's@/src/.*@@; s@/Dockerfile@@; s@/Makefile@@; s@/pom.xml@@' \
+        | awk -F/ '{ print $NF }' \
+        | sort \
+        | uniq
+    ))
+    local IFS=","
+    local MODULES=(${MODULES[*]/#/:})
+    if [[ -z ${1} ]]; then
+        command mvn install -pl "${MODULES}" -DskipTests
+    elif [[ ${1} == -c || ${1} == --clean ]]; then
+        command mvn clean install -pl "${MODULES}" -DskipTests
+    fi
+}

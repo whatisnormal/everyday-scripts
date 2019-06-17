@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# 'includes' / loads file contents.
+function include() {
+    local path=$1
+    for file in  $(find "$path" -type f -print)
+    do
+        echo "Sourcing $file..."
+        source ${file}
+    done
+}
+
+include ${everyday_scripts_path:-.}/lib/init
+
+
+
+

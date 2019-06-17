@@ -3,9 +3,13 @@
 
 alias ls='ls -lart'
 
-alias cd='cd && ls'
+alias cp='cp -vi'
 
-alias cp='cp -v'
+alias  df='df -h'
+alias  du='du -h'
+
+alias  mv='mv -i'
+alias  rm='rm -i'
 
 # Lazy ancestor directory ziggurat of doom
 alias        ..='cd ..'
