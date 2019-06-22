@@ -5,11 +5,16 @@ function include() {
     local path=$1
     for file in  $(find "$path" -type f -print)
     do
-        echo "Sourcing $file..."
         source ${file}
     done
 }
 
+#Loads exports
+echo "Exporting everyday-scripts lib/*"
+include ${everyday_scripts_path:-.}/lib/exports
+
+#Loads commands.
+echo "Initializing everyday-scripts lib/*"
 include ${everyday_scripts_path:-.}/lib/init
 
 

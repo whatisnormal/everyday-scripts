@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#
+# Executes 'mvn install' goal only against changed modules. Assumes multi-module project.
+#
 function mvn-install-changed() {
     set -e
     local MODULES=($(

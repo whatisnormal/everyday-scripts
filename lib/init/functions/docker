@@ -1,11 +1,23 @@
 #!/usr/bin/env bash
 
+# Docker functions.
+
+#
+# Kills container on port.
+# @params:
+#   1=port
+#
 function kill-on-port() {
     set -e
     local PID=$(lsof -ti :${1})
     kill -9 ${PID}
 }
 
+#
+# Enters container using bash.
+# @params:
+#   1=container_id
+#
 function docker-bash() {
     set -e
     local CONTAINER=$(docker ps -a | grep ${1} | head -n 1 | awk '{ print $1 }')
