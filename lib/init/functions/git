@@ -58,7 +58,10 @@ function setAlias() {
     eval "git config --global --get alias.${1}"
 }
 
+setAlias "gco" "checkout"
+
 # Push force ()
+
 setAlias "gpfl" "push --force-with-lease"
 
 # Pulls remote repo but rebases local commits against remote commits.
