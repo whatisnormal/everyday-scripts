@@ -1,0 +1,12 @@
+
+function exportPublicKey () {
+  email=${1}
+  name=${1}
+  gpg --export --armor "${email}" > "${name}-pubkey.asc"
+}
+
+function exportPrivateKey () {
+  email=${1}
+  name=${1}
+  gpg --export-secret-keys --armor "${email}" > "${name}-privkey.asc"
+}
