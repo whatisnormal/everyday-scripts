@@ -13,7 +13,7 @@ alias  mv='mv -i'
 alias  rm='rm -i'
 
 # Lazy ancestor directory ziggurat of doom
-alias        ..='cd ..'
+alias        ..='cd .. && ls -lart'
 alias       ...='cd ../..'
 alias      ....='cd ../../..'
 alias     .....='cd ../../../..'
